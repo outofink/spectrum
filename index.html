@@ -119,16 +119,31 @@ stats.domElement.style.left = '0px';
 stats.domElement.style.top = '0px';
 
 document.body.appendChild( stats.domElement );
-setInterval( function () {
 
-    stats.begin();
+var fps = 60;
+var now;
+var then = Date.now();
+var interval = 1000/fps;
+var delta;
 
-    draw()
+function gameLoop() {
+	requestAnimationFrame(gameLoop);
+     
+    now = Date.now();
+    delta = now - then;
+     
+    if (delta > interval) {
+    	then = now - (delta % interval);
 
-    stats.end();
+	    stats.begin();
 
-}, 1000 / 60 );
-//setInterval(draw, 1000/60);
+	    draw()
+
+	    stats.end();
+	}
+};
+
+gameLoop();
 </script>
 </body>
 </html>
