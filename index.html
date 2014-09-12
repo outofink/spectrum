@@ -1,5 +1,6 @@
 <html>
 <head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
@@ -49,8 +50,8 @@ function create_particle()
 	this.y = Math.round(Math.random()*H);
 	
 	//Lets add random velocity to each particle
-	this.vx = Math.round(Math.random()*20-10);
-	this.vy = Math.round(Math.random()*20-10);
+	this.vx = Math.round(Math.random()*8+2);
+	this.vy = Math.round(Math.random()*8+2);
 	
 	//colors
 	var r = 255;
@@ -59,7 +60,7 @@ function create_particle()
 	this.color = "rgba("+r+", "+g+", "+b+",1)";
 	
 	//Random size
-	this.radius = Math.round(Math.random()*20+20);
+	this.radius = Math.round(Math.random()*80+40);
 }
 
 var x = 100; var y = 100;
