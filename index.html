@@ -132,7 +132,6 @@ function collisionCheck()
 
 			if(dist < minDist)
 			{
-				var angle = Math.atan2(dy, dx);
 				var tx = ball0.x + dx / dist * minDist;
 				var ty = ball0.y + dy / dist * minDist;
 				var ax = (tx - ball1.x);
